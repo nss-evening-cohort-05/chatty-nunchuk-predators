@@ -1,16 +1,10 @@
 # Chatty Group Project
 
-## Setup
-
-Every teammate copy and run the following commands in the host machine terminal.
-
-```bash
-mkdir -p ~/workspace/group-projects && cd $_
-git clone [Github Classroom repo URL]
-cd [repo name]
-```
-
 ## Requirements
+* Use Bootstrap
+* Complete 1 of the bonus items
+* Balanced github contributions
+
 
 Check out the [simple wireframe](https://app.moqups.com/chortlehoort/uGBbLbK46Y/view/page/a3bd0c733) for this application on Moqups.com. You can make your final interface as fancy as you like, but keep the general layout similar to the wireframe.
 
