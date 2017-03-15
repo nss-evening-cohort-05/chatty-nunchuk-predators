@@ -3,7 +3,7 @@
 
 ## Assignment
 
-#### The "chatty" assignment is an in class, group project that is designed to help us expand our knowledge and experience working collaboratively. This main focus of the assignment is to review the information from our last two milestones, The-Static-Web” and the current “Single-Page-Apps” and combine that knowledge into a working web chatroom. 
+#### The "chatty" assignment is an in class, group project that is designed to help us expand our knowledge and experience working collaboratively. This main focus of the assignment is to review the information from our last two milestones, "The-Static-Web” and the current “Single-Page-Apps” and combine that knowledge into a working web chatroom. 
 
 
 
@@ -15,7 +15,8 @@
 We had to create a trello board and plan out and assign all aspects of the project. This was immensely help to "visualize" the assignment and make sure to see the projects scope from beginning to end. 
 
 
-here is a link to the our Trello 
+Here is a link to the our Trello! 
+[https://trello.com/b/rsYng8Xm/chattygroupproject]
 
 ##### Navigation bar
 
