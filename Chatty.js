@@ -1,9 +1,10 @@
-var SolarSystem = (function(){
+var Chatty = (function(){
 
+	dataArray = [];
 
-	function fileLoaded(){
-	var data = JSON.parse(this.responseText);
-	return data;
+	function getData(){
+	var jData = JSON.parse(this.responseText);
+	dataArray.push(jData);
 	}
 
 	function fileFailed(){
@@ -11,24 +12,21 @@ var SolarSystem = (function(){
 	}
 
 	var messageRequest = new XMLHttpRequest();
-	messageRequest.addEventListener("load", fileLoaded);
+	messageRequest.addEventListener("load", getData);
 	messageRequest.addEventListener("error", fileFailed);
 	messageRequest.open("GET","boilerplate.json");
 	messageRequest.send();
 	console.log("messageRequest", messageRequest);
 
-
-	var boilerplate = [];
-	boilerplate.push(data); //push(data).message;
-
-
 	return {
 
 	  getXhr: function(){
-	  		return message;
+
+	  		return dataArray;
+
 	  }
 	  setXhr: function(){
-	  		message // do something;
+	  		// set with something involving DOMhandler
 	  }
 	}
 })();
