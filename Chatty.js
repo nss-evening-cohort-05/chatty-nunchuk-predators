@@ -4,6 +4,7 @@ var Chatty = (function(){
 
 	function getData(){
 	var jData = JSON.parse(this.responseText);
+	console.log("jData is " + jData);
 	dataArray.push(jData);
 	}
 
