@@ -1,0 +1,41 @@
+body {
+	font-family: 'Space Mono', monospace;
+}
+
+nav {
+	padding: 3%;
+}
+
+.logo {
+	font-size: 4rem;
+	display: inline-block;
+}
+
+#container {
+	margin: 3%;
+	border: 1px solid lightgrey;
+	border-radius: 5px;
+	padding: 3%;
+}
+
+.checkboxes-buttons {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+
+#input-text {
+	display: inline-block;
+	width: 85%;
+}
+
+.checkbox {
+	display: inline-block;
+	padding-top: 1%;
+	padding-right: 3%;
+}
+
+.buttons {
+	display: inline-block;
+	margin-top: 1%;
+}

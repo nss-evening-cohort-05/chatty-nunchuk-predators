@@ -1,11 +1,12 @@
 var Chatty = (function(){
 
-	dataArray = [];
+	var data;
 
 	function getData(){
-	var jData = JSON.parse(this.responseText);
-	console.log("jData is " + jData);
-	dataArray.push(jData);
+		var jData = JSON.parse(this.responseText);
+		console.log("jData is " + jData.messages);
+		data = jData.messages;
+		return data;
 	}
 
 	function fileFailed(){
@@ -23,9 +24,9 @@ var Chatty = (function(){
 
 	  getXhr: function(){
 
-	  		return dataArray;
+	  		return data;
 
-	  }
+	  },
 	  setXhr: function(){
 	  		// set with something involving DOMhandler
 	  }
