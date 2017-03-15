@@ -24,7 +24,7 @@ var Chatty = (function(){
 
 	  		return dataArray;
 
-	  }
+	  },
 	  setXhr: function(){
 	  		// set with something involving DOMhandler
 	  }

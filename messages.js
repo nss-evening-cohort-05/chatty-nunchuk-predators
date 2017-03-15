@@ -1,0 +1,23 @@
+//////////////////////////////////MB/////////////////////////////////
+////////////////////References and Event Listeners //////////////////
+
+
+// var Chatty = (function(oldChatty){
+
+// 	dataArray = [];
+
+// 	return {
+
+// 	  getXhr = function(){
+
+// 	  		return dataArray;
+
+// 	  },
+// 	  setXhr = function(){
+// 	  		// set with something involving DOMhandler
+// 	  }
+// 	}
+// })();
+
+
+/////////////////////////////// MB end ///////////////////////////////
