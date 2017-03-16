@@ -28,7 +28,8 @@ var Chatty = (function(){
 
 	  },
 	  setXhr: function(){
-	  		// set with something involving DOMhandler
+	  		// for (i; i < data.length; i++);
+	  		// 	console.log(jData.messages);
 	  }
 	}
 })();

@@ -49,13 +49,31 @@ largeTextCheckbox.addEventListener("change", function(){
 document.onkeydown = function() {
  if (window.event.keyCode === 13) {
  	console.log("enter button works");
-	// post user input text to dom
-	
-	// messageBoard.innerHTML += userInputTextbox.value; // this is temporary until it's writing messages from iifes
+	// Chatty.setXhr();
+	writeToDom();
  }
 };
 
+// Writing message to Dom
 
+function writeToDom() {
+	var messageToWrite = "";
+		messageToWrite += `<div class="mesageFromUser">`;
+		messageToWrite += `<h3> Username: ${userInputTextbox} </h3>`;			// textPlaceHolder needs defining
+		messageToWrite += `<button class="deleteButton">Delete</button>`;
+		messageToWrite += `</div>`;
+		messageBoard.innerHTML += messageToWrite;
+};
+
+function deleteAllMessages() {
+	messageBoard.innerHTML = "";
+};
+
+function deleteSingleCard(e){
+	if (e.target.className === "deleteButton"){
+		e.target.parentElement.remove();
+	};
+};
 
 messageBoard.innerHTML = Chatty.getXhr();
 
