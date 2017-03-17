@@ -4,7 +4,6 @@ var Chatty = (function(){
 
 	function getData(){
 		var jData = JSON.parse(this.responseText);
-		console.log("jData is " + jData.messages);
 		data = jData.messages;
 		return data;
 	}
@@ -18,7 +17,6 @@ var Chatty = (function(){
 	messageRequest.addEventListener("error", fileFailed);
 	messageRequest.open("GET","boilerplate.json");
 	messageRequest.send();
-	console.log("messageRequest", messageRequest);
 
 	return {
 
@@ -30,9 +28,7 @@ var Chatty = (function(){
 	  writeXhr: function(){
 
 	  		writeFillerMessageToDom(Chatty.getXhr());
-
-	  		// for (i; i < data.length; i++);
-	  		// 	console.log(jData.messages);
 	  }
-	}
+	};
+
 })();

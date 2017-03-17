@@ -1,23 +1,14 @@
-//////////////////////////////////MB/////////////////////////////////
-////////////////////References and Event Listeners //////////////////
+var Chatty = (function(oldChatty) {
 
+    oldChatty.writeNewMessageToDom = function() {
+        var messageToWrite = "";
+        messageToWrite += `<div class="mesageFromUser">`;
+        messageToWrite += `<h3> Message: ${userInputTextbox.value} </h3>`;
+        messageToWrite += `<button class="deleteButton">Delete</button>`;
+        messageToWrite += `</div>`;
+        messageBoard.innerHTML += messageToWrite;
+    };
 
-// var Chatty = (function(oldChatty){
+    return oldChatty;
 
-// 	dataArray = [];
-
-// 	return {
-
-// 	  getXhr = function(){
-
-// 	  		return dataArray;
-
-// 	  },
-// 	  setXhr = function(){
-// 	  		// set with something involving DOMhandler
-// 	  }
-// 	}
-// })();
-
-
-/////////////////////////////// MB end ///////////////////////////////
+})(Chatty || {});
