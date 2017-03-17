@@ -4,23 +4,18 @@ var messageBoard = document.getElementById("container");
 var postNewMessageButton = document.getElementById("create-message");
 var clearAllMessagesButton = document.getElementById("clear-board");
 var userInputTextbox = document.getElementById("input-text");
-
-// Checkbox references
-
 var darkThemeCheckbox = document.getElementById("dark-theme");
 var largeTextCheckbox = document.getElementById("large-text");
 
 postNewMessageButton.addEventListener("click", function(){
 	Chatty.writeNewMessageToDom();
+	userInputTextbox.value = "";
 });
 
 clearAllMessagesButton.addEventListener("click", deleteAllMessages);
 
 userInputTextbox.addEventListener("change", function() {
-	console.log("textbox working");
 })
-
-// Checkbox event listeners
 
 darkThemeCheckbox.addEventListener("change", function(){
 	console.log("dark theme checkbox works");
@@ -32,20 +27,15 @@ largeTextCheckbox.addEventListener("change", function(){
 
 document.body.addEventListener("click", deleteSingleCard);
 
-// Enter button
-
 document.onkeydown = function() {
  if (window.event.keyCode === 13) {
 	Chatty.writeNewMessageToDom();
+	userInputTextbox.value = "";
  }
 };
 
-// Writing PreLoaded messages to Dom
-
 function writeFillerMessageToDom(data){
-
 	for(i=0; i<data.length; i++){
-
 		var fillerToWrite = "";
 		fillerToWrite += `<div class="mesageFromUser">`;
 		fillerToWrite += `<h3>${data[i].name}</h3>`;
