@@ -69,12 +69,19 @@ function writeNewMessageToDom() {
 
 function writeFillerMessageToDom(data){
 
-	for(i=0; i<)
+	for(i=0; i<data.length; i++){
+
+		var fillerToWrite = "";
+		fillerToWrite += `<div class="mesageFromUser">`;
+		fillerToWrite += `<h3>${data[i].name}</h3>`;
+		fillerToWrite += `<p>${data[i].user_message}</p>`;
+		fillerToWrite += `<button class="deleteButton">Delete</button>`;
+		fillerToWrite += `</div>`;
+		messageBoard.innerHTML += fillerToWrite;
+
+	}
 
 }
-
-
-
 
 function deleteAllMessages() {
 	messageBoard.innerHTML = "";
