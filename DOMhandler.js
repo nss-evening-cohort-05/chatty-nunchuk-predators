@@ -9,7 +9,10 @@ var largeTextCheckbox = document.getElementById("large-text");
 
 postNewMessageButton.addEventListener("click", passNewMessageThru);
 
-clearAllMessagesButton.addEventListener("click", deleteAllMessages);
+clearAllMessagesButton.addEventListener("click", function() {
+	deleteAllMessages();
+	clearAllMessagesButton.classList.add("disabled");   
+});
 
 userInputTextbox.addEventListener("change", function() {})
 
@@ -28,6 +31,10 @@ document.onkeydown = function() {
         passNewMessageThru();
     }
 };
+
+postNewMessageButton.addEventListener("click", function(){
+	clearAllMessagesButton.classList.remove("disabled"); 
+});
 
 function passNewMessageThru() {
         if (userInputTextbox.value === "") {
