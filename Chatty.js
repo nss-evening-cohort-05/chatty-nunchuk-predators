@@ -27,7 +27,10 @@ var Chatty = (function(){
 	  		return data;
 
 	  },
-	  setXhr: function(){
+	  writeXhr: function(){
+
+	  		writeFillerMessageToDom(Chatty.getXhr());
+
 	  		// for (i; i < data.length; i++);
 	  		// 	console.log(jData.messages);
 	  }

@@ -65,6 +65,17 @@ function writeNewMessageToDom() {
 		messageBoard.innerHTML += messageToWrite;
 };
 
+// Writing PreLoaded messages to Dom
+
+function writeFillerMessageToDom(data){
+
+	for(i=0; i<)
+
+}
+
+
+
+
 function deleteAllMessages() {
 	messageBoard.innerHTML = "";
 };
@@ -74,6 +85,9 @@ function deleteSingleCard(e){
 		e.target.parentElement.remove();
 	};
 };
+
+
+window.addEventListener("load", Chatty.writeXhr);
 
 // messageBoard.innerHTML = Chatty.getXhr();
 
