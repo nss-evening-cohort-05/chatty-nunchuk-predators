@@ -29,8 +29,8 @@ userInputTextbox.addEventListener("change", function() {
 darkThemeCheckbox.addEventListener("change", function(){
 	if (event.target.checked === true) {
 		document.getElementsByTagName("body").classList.add("darkTheme");
-	}
-	console.log(typeof.getElementsByTagName);
+	}	
+	console.log(typeof(document.getElementsByTagName)); //find the oobject in the Arrray. 
 });
 ////////////End KC ////////////
 
