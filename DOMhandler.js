@@ -14,7 +14,10 @@ postNewMessageButton.addEventListener("click", function(){
 	Chatty.writeNewMessageToDom();
 });
 
-clearAllMessagesButton.addEventListener("click", deleteAllMessages);
+clearAllMessagesButton.addEventListener("click", function() {
+	deleteAllMessages();
+	clearAllMessagesButton.classList.add("disabled");   
+});
 
 userInputTextbox.addEventListener("change", function() {
 	console.log("textbox working");
@@ -39,6 +42,10 @@ document.onkeydown = function() {
 	Chatty.writeNewMessageToDom();
  }
 };
+
+postNewMessageButton.addEventListener("click", function(){
+	clearAllMessagesButton.classList.remove("disabled"); 
+});
 
 // Writing PreLoaded messages to Dom
 
