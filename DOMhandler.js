@@ -20,12 +20,10 @@ var largeTextCheckbox = document.getElementById("large-text");
 // Button event listeners
 
 postNewMessageButton.addEventListener("click", function(){
-	console.log("post message button works");
+	writeNewMessageToDom();
 });
 
-clearAllMessagesButton.addEventListener("click", function(){
-	console.log("clear message button works");
-});
+clearAllMessagesButton.addEventListener("click", deleteAllMessages);
 
 // Textbox event listener
 
@@ -44,20 +42,40 @@ largeTextCheckbox.addEventListener("change", function(){
 	console.log("dark theme checkbox works");
 });
 
+// Delete single message button listener
+
+document.body.addEventListener("click", deleteSingleCard);
+
 // Enter button
 
 document.onkeydown = function() {
  if (window.event.keyCode === 13) {
- 	console.log("enter button works");
-	// post user input text to dom
-	
-	// messageBoard.innerHTML += userInputTextbox.value; // this is temporary until it's writing messages from iifes
+	writeNewMessageToDom();
  }
 };
 
+// Writing message to Dom
 
+function writeNewMessageToDom() {
+	var messageToWrite = "";
+		messageToWrite += `<div class="mesageFromUser">`;
+		messageToWrite += `<h3> Message: ${userInputTextbox.value} </h3>`;
+		messageToWrite += `<button class="deleteButton">Delete</button>`;
+		messageToWrite += `</div>`;
+		messageBoard.innerHTML += messageToWrite;
+};
 
-messageBoard.innerHTML = Chatty.getXhr();
+function deleteAllMessages() {
+	messageBoard.innerHTML = "";
+};
+
+function deleteSingleCard(e){
+	if (e.target.className === "deleteButton"){
+		e.target.parentElement.remove();
+	};
+};
+
+// messageBoard.innerHTML = Chatty.getXhr();
 
 
 /////////////////////////////// MB end ///////////////////////////////
