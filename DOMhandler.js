@@ -23,12 +23,22 @@ userInputTextbox.addEventListener("change", function() {
 // Checkbox event listeners
 
 darkThemeCheckbox.addEventListener("change", function(){
-	console.log("dark theme checkbox works");
+	if (event.target.checked === true) {
+		document.getElementsByTagName("html").classList.add("darkTheme");
+	}
+	console.log("color change?");
 });
 
 largeTextCheckbox.addEventListener("change", function(){
 	console.log("dark theme checkbox works");
 });
+
+//////////////KC////////////////
+///event listener functions on checkboxes ////
+
+
+
+////////////End KC ////////////
 
 document.body.addEventListener("click", deleteSingleCard);
 
