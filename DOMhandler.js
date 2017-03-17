@@ -1,15 +1,8 @@
-//////////////////////////////////MB/////////////////////////////////
 ////////////////////References and Event Listeners //////////////////
 
 var messageBoard = document.getElementById("container");
-
-// Button references
-
 var postNewMessageButton = document.getElementById("create-message");
 var clearAllMessagesButton = document.getElementById("clear-board");
-
-// Textbox references
-
 var userInputTextbox = document.getElementById("input-text");
 
 // Checkbox references
@@ -17,15 +10,11 @@ var userInputTextbox = document.getElementById("input-text");
 var darkThemeCheckbox = document.getElementById("dark-theme");
 var largeTextCheckbox = document.getElementById("large-text");
 
-// Button event listeners
-
 postNewMessageButton.addEventListener("click", function(){
-	writeNewMessageToDom();
+	Chatty.writeNewMessageToDom();
 });
 
 clearAllMessagesButton.addEventListener("click", deleteAllMessages);
-
-// Textbox event listener
 
 userInputTextbox.addEventListener("change", function() {
 	console.log("textbox working");
@@ -35,14 +24,11 @@ userInputTextbox.addEventListener("change", function() {
 
 darkThemeCheckbox.addEventListener("change", function(){
 	console.log("dark theme checkbox works");
-
 });
 
 largeTextCheckbox.addEventListener("change", function(){
 	console.log("dark theme checkbox works");
 });
-
-// Delete single message button listener
 
 document.body.addEventListener("click", deleteSingleCard);
 
@@ -50,19 +36,8 @@ document.body.addEventListener("click", deleteSingleCard);
 
 document.onkeydown = function() {
  if (window.event.keyCode === 13) {
-	writeNewMessageToDom();
+	Chatty.writeNewMessageToDom();
  }
-};
-
-// Writing message to Dom
-
-function writeNewMessageToDom() {
-	var messageToWrite = "";
-		messageToWrite += `<div class="mesageFromUser">`;
-		messageToWrite += `<h3> Message: ${userInputTextbox.value} </h3>`;
-		messageToWrite += `<button class="deleteButton">Delete</button>`;
-		messageToWrite += `</div>`;
-		messageBoard.innerHTML += messageToWrite;
 };
 
 // Writing PreLoaded messages to Dom
@@ -78,9 +53,7 @@ function writeFillerMessageToDom(data){
 		fillerToWrite += `<button class="deleteButton">Delete</button>`;
 		fillerToWrite += `</div>`;
 		messageBoard.innerHTML += fillerToWrite;
-
 	}
-
 }
 
 function deleteAllMessages() {
@@ -93,10 +66,4 @@ function deleteSingleCard(e){
 	};
 };
 
-
 window.addEventListener("load", Chatty.writeXhr);
-
-// messageBoard.innerHTML = Chatty.getXhr();
-
-
-/////////////////////////////// MB end ///////////////////////////////
