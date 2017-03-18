@@ -69,7 +69,7 @@ function writeArrayToDom() {
         domString += `<div class="mesageFromUser">`;
         domString += `<p>${arrayOfMsg[i]}</p>`;
         domString += `<button class="deleteButton">Delete</button>`;
-        domString += `<input onclick='responsiveVoice.speak("${arrayOfMsg[i]}");' type='button' value=' 🔊 Play' class='audioplay' id='picOnPlayButton' />`
+        domString += `<input onclick='responsiveVoice.speak("${arrayOfMsg[i]}");' type='button' value=' 🔊 Play' class='audioplay btn btn-default' id='picOnPlayButton'/>`
         domString += `</div>`;
     }
     messageBoard.innerHTML = domString;
