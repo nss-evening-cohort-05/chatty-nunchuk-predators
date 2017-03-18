@@ -66,8 +66,10 @@ function writeArrayToDom() {
     var arrayOfMsg = Chatty.getNewMessageArray();
     var domString = "";
     for (var i = 0; i < arrayOfMsg.length; i++) {
+        var timestamp = new Date;
         domString += `<div class="mesageFromUser">`;
         domString += `<p>${arrayOfMsg[i]}</p>`;
+        domString += `<p class="timestamp">${timestamp}</p>`;
         domString += `<button class="deleteButton">Delete</button>`;
         domString += `<input onclick='responsiveVoice.speak("${arrayOfMsg[i]}");' type='button' value=' 🔊 Play' class='audioplay btn btn-default' id='picOnPlayButton'/>`
         domString += `</div>`;
@@ -91,6 +93,4 @@ function deleteSingleCard(e) {
 
 window.addEventListener("load", Chatty.writeXhr);
 window.addEventListener("load", writeArrayToDom);
-
-
 
