@@ -7,7 +7,6 @@ var Chatty = (function(oldChatty) {
 
     oldChatty.writeNewMessageToArray = function(messageToWrite) {
         privateMessageArray.push(messageToWrite);
-        console.log("privateMessageArray", privateMessageArray);
     };
 
     return oldChatty;
