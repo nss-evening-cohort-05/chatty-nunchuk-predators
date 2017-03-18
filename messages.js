@@ -9,7 +9,7 @@ var Chatty = (function(oldChatty) {
         privateMessageArray.push(messageToWrite);
         console.log("privateMessageArray", privateMessageArray);
     };
- oldChatty.writeNewMessageToArray();
+
     return oldChatty;
 
 })(Chatty || {});
