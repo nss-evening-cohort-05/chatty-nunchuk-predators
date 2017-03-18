@@ -44,3 +44,7 @@ nav {
 	background-color: black;
 	color: white;
 }
+
+.largeTextMsg{
+	font-size: 2.5em;
+}

@@ -5,6 +5,7 @@ var postNewMessageButton = document.getElementById("create-message");
 var clearAllMessagesButton = document.getElementById("clear-board");
 var userInputTextbox = document.getElementById("input-text");
 var darkThemeBody = document.getElementsByTagName("body");
+var largeThemeMessages = document.getElementsByTagName("p");
 
 // Checkbox references
 
@@ -18,7 +19,7 @@ postNewMessageButton.addEventListener("click", function(){
 clearAllMessagesButton.addEventListener("click", deleteAllMessages);
 
 userInputTextbox.addEventListener("change", function() {
-	console.log("textbox working");
+
 })
 
 // Checkbox event listeners
@@ -36,10 +37,19 @@ darkThemeCheckbox.addEventListener("change", function(){
 });
 ////////////End KC ////////////
 
+//////////////KC////////////////
 largeTextCheckbox.addEventListener("change", function(){
-	console.log("dark theme checkbox works");
+	for (var i=0; i<largeThemeMessages.length; i++){
+		if (event.target.checked === true) {
+			largeThemeMessages[i].classList.add("largeTextMsg");
+		} 
+		else {
+			largeThemeMessages[i].classList.remove("largeTextMsg");
+		}
+	}
 });
-console.log(darkThemeBody);
+
+////////////End KC ////////////
 
 
 
