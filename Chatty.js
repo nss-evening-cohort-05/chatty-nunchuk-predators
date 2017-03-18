@@ -27,7 +27,7 @@ var Chatty = (function(){
 	  },
 	  writeXhr: function(){
 
-	  		writeFillerMessageToDom(Chatty.getXhr());
+	  		writeFillerMessageToArray(Chatty.getXhr());
 	  }
 	};
 
