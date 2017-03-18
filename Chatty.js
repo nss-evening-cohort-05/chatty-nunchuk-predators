@@ -12,7 +12,7 @@ var Chatty = (function(oldChatty){
 	}
 
 	function fileFailed(){
-		console.log("failed");
+		alert("Request Timed Out");
 	}
 
 	var messageRequest = new XMLHttpRequest();
