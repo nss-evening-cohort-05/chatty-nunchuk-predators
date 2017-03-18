@@ -65,12 +65,13 @@ function passNewMessageThru() {
         if (userInputTextbox.value === "") {
             alert("Please type something, silly!")
         } else {
-            Chatty.writeNewMessageToDom();
+            Chatty.writeNewMessageToArray();
             userInputTextbox.value = "";
+            writeNewMessageToDom();
         }
-}
+};
 
-function writeFillerMessageToDom(data) {
+function writeFillerMessageToArray(data) {
     for (var i = 0; i < data.length; i++) {
         var fillerToWrite = "";
         fillerToWrite += `<div class="mesageFromUser">`;
@@ -80,7 +81,11 @@ function writeFillerMessageToDom(data) {
         fillerToWrite += `</div>`;
         messageBoard.innerHTML += fillerToWrite;
     }
-}
+};
+
+function writeNewMessageToDom() {
+    messageBoard.innerHTML = Chatty.getNewMessageArray(); /// <<----- This line
+};
 
 function deleteAllMessages() {
     messageBoard.innerHTML = "";
@@ -89,12 +94,6 @@ function deleteAllMessages() {
 function deleteSingleCard(e) {
     if (e.target.className === "deleteButton") {
         e.target.parentElement.remove();
-    };
-};
-
-function removeLastMessageAddDisableClass {
-    if ( = "") {
-        clearAllMessagesButton.classList.add("disabled"); 
     };
 };
 
