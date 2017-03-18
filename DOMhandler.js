@@ -12,7 +12,6 @@ var largeThemeMessages = document.getElementsByTagName("p");
 var darkThemeCheckbox = document.getElementById("dark-theme");
 var largeTextCheckbox = document.getElementById("large-text");
 
-// postNewMessageButton.addEventListener("click", passNewMessageThru);
 
 clearAllMessagesButton.addEventListener("click", function() {
 	deleteAllMessages();
@@ -20,10 +19,6 @@ clearAllMessagesButton.addEventListener("click", function() {
 });
 
 userInputTextbox.addEventListener("change", function() {})
-
-//////////////KC////////////////
-///event listener functions on checkboxes ////
-
 
 darkThemeCheckbox.addEventListener("change", function(){
 	if (event.target.checked === true) {
@@ -44,9 +39,6 @@ largeTextCheckbox.addEventListener("change", function(){
 	}
 });
 
-////////////End KC ////////////
-
-
 
 document.body.addEventListener("click", deleteSingleCard);
 
@@ -59,7 +51,10 @@ document.onkeydown = function() {
 };
 
 postNewMessageButton.addEventListener("click", function(){
-	clearAllMessagesButton.classList.remove("disabled"); 
+    Chatty.writeNewMessageToArray(userInputTextbox.value); 
+    clearAllMessagesButton.classList.remove("disabled"); 
+    writeArrayToDom(Chatty.getNewMessageArray());
+
 });
 
 function writeArrayToDom() {
@@ -67,7 +62,6 @@ function writeArrayToDom() {
     var domString = "";
     for (var i = 0; i < arrayOfMsg.length; i++) {
         domString += `<div class="mesageFromUser">`;
-        // domString += `<h3>${domString.name}</h3>`;
         domString += `<p>${arrayOfMsg[i]}</p>`;
         domString += `<button class="deleteButton">Delete</button>`;
         domString += `</div>`;

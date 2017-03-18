@@ -51,3 +51,7 @@ nav {
 .largeTextMsg{
 	font-size: 2.5em;
 }
+
+.deleteButton {
+	margin-bottom: 2%;
+}

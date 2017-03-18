@@ -7,7 +7,6 @@ var Chatty = (function(oldChatty){
 		var jData = JSON.parse(this.responseText);
 		data = jData.messages;
 		for (var i=0;i<data.length; i++){
-			console.log(data[i].user_message);
 			Chatty.writeNewMessageToArray(data[i].user_message);
 		}
 		return data;
@@ -28,10 +27,7 @@ var Chatty = (function(oldChatty){
 	  	return data;
 
 	  }
-	  oldChatty.writeXhr = function(){
 
-	  	// writeFillerMessageToArray(Chatty.getXhr());
-		}
 	return oldChatty;
 
 })(Chatty || {});
