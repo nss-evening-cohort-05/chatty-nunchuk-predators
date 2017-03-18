@@ -29,7 +29,7 @@ nav {
 
 #input-text {
 	display: inline-block;
-	width: 85%;
+	width: 84%;
 }
 
 .checkbox {
@@ -51,10 +51,14 @@ nav {
 	color: white;
 }
 
+.darkTheme #container-wrapper p {
+	color: white;
+}
+
 .largeTextMsg{
 	font-size: 2.5em;
 }
 
-.btn {
+.deleteButton {
 	margin-bottom: 2%;
 }

@@ -70,14 +70,14 @@ function writeArrayToDom() {
     for (var i = 0; i < arrayOfMsg.length; i++) {
         domString += `<div class="mesageFromUser">`;
         domString += `<p>${arrayOfMsg[i]}</p>`;
-        domString += `<button class="deleteButton">Delete</button>`;
+        domString += `<button class="deleteButton btn btn-default">Delete</button>`;
         domString += `</div>`;
     }
     messageBoard.innerHTML = domString;
 };
 
 function writeNewMessageToDom() {
-    messageBoard.innerHTML = Chatty.getNewMessageArray(); /// <<----- This line
+    messageBoard.innerHTML = Chatty.getNewMessageArray();
 };
 
 function deleteAllMessages() {
@@ -85,7 +85,8 @@ function deleteAllMessages() {
 };
 
 function deleteSingleCard(e) {
-    if (e.target.className === "deleteButton") {
+    if (e.target.className === "deleteButton btn btn-default") {
+        console.log(event);
         e.target.parentElement.remove();
     };
 };
