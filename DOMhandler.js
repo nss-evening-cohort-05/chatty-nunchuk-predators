@@ -12,7 +12,7 @@ var largeThemeMessages = document.getElementsByTagName("p");
 var darkThemeCheckbox = document.getElementById("dark-theme");
 var largeTextCheckbox = document.getElementById("large-text");
 
-postNewMessageButton.addEventListener("click", passNewMessageThru);
+// postNewMessageButton.addEventListener("click", passNewMessageThru);
 
 clearAllMessagesButton.addEventListener("click", function() {
 	deleteAllMessages();
@@ -52,7 +52,9 @@ document.body.addEventListener("click", deleteSingleCard);
 
 document.onkeydown = function() {
     if (window.event.keyCode === 13) {
-        passNewMessageThru();
+        // passNewMessageThru();
+        Chatty.writeNewMessageToArray(userInputTextbox.value);
+        // console.log(Chatty.privateMessageArray);
         clearAllMessagesButton.classList.remove("disabled"); 
     }
 };
@@ -61,22 +63,22 @@ postNewMessageButton.addEventListener("click", function(){
 	clearAllMessagesButton.classList.remove("disabled"); 
 });
 
-function passNewMessageThru() {
-        if (userInputTextbox.value === "") {
-            alert("Please type something, silly!")
-        } else {
-            Chatty.writeNewMessageToArray();
-            userInputTextbox.value = "";
-            writeNewMessageToDom();
-        }
-};
+// function passNewMessageThru() {
+//         if (userInputTextbox.value === "") {
+//             alert("Please type something, silly!")
+//         } else {
+//             Chatty.writeNewMessageToArray();
+//             userInputTextbox.value = "";
+//             writeNewMessageToDom();
+//         }
+// };
 
-function writeFillerMessageToArray(data) {
-    for (var i = 0; i < data.length; i++) {
+function writeFillerMessageToArray(array) {
+    for (var i = 0; i < array.length; i++) {
         var fillerToWrite = "";
         fillerToWrite += `<div class="mesageFromUser">`;
-        fillerToWrite += `<h3>${data[i].name}</h3>`;
-        fillerToWrite += `<p>${data[i].user_message}</p>`;
+        fillerToWrite += `<h3>${array[i].name}</h3>`;
+        fillerToWrite += `<p>${array[i].user_message}</p>`;
         fillerToWrite += `<button class="deleteButton">Delete</button>`;
         fillerToWrite += `</div>`;
         messageBoard.innerHTML += fillerToWrite;
