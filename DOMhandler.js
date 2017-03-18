@@ -29,6 +29,7 @@ document.body.addEventListener("click", deleteSingleCard);
 document.onkeydown = function() {
     if (window.event.keyCode === 13) {
         passNewMessageThru();
+        clearAllMessagesButton.classList.remove("disabled"); 
     }
 };
 
@@ -64,6 +65,12 @@ function deleteAllMessages() {
 function deleteSingleCard(e) {
     if (e.target.className === "deleteButton") {
         e.target.parentElement.remove();
+    };
+};
+
+function removeLastMessageAddDisableClass {
+    if ( = "") {
+        clearAllMessagesButton.classList.add("disabled"); 
     };
 };
 
