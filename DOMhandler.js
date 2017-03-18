@@ -44,17 +44,24 @@ document.body.addEventListener("click", deleteSingleCard);
 
 document.onkeydown = function() {
     if (window.event.keyCode === 13) {
+        if (userInputTextbox.value === "") {
+            alert("You must enter some text, silly!");
+        } else {  
         Chatty.writeNewMessageToArray(userInputTextbox.value);
         clearAllMessagesButton.classList.remove("disabled"); 
         writeArrayToDom(Chatty.getNewMessageArray());
+        }
     }
 };
 
 postNewMessageButton.addEventListener("click", function(){
-    Chatty.writeNewMessageToArray(userInputTextbox.value); 
-    clearAllMessagesButton.classList.remove("disabled"); 
-    writeArrayToDom(Chatty.getNewMessageArray());
-
+    if (userInputTextbox.value === "") {
+        alert("You must enter some text, silly!");
+    } else {
+        Chatty.writeNewMessageToArray(userInputTextbox.value); 
+        clearAllMessagesButton.classList.remove("disabled"); 
+        writeArrayToDom(Chatty.getNewMessageArray());
+    }
 });
 
 function writeArrayToDom() {
