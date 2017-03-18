@@ -70,6 +70,7 @@ function writeArrayToDom() {
         // domString += `<h3>${domString.name}</h3>`;
         domString += `<p>${arrayOfMsg[i]}</p>`;
         domString += `<button class="deleteButton">Delete</button>`;
+        domString += `<input onclick='responsiveVoice.speak("${arrayOfMsg[i]}");' type='button' value=' 🔊 Play' class='audioplay' id='picOnPlayButton' />`
         domString += `</div>`;
     }
     messageBoard.innerHTML = domString;
