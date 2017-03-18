@@ -3,7 +3,7 @@ body {
 }
 
 nav {
-	padding: 3%;
+	padding: 1%;
 }
 
 .logo {
@@ -12,17 +12,13 @@ nav {
 }
 
 #container-wrapper {
-	/*position: fixed;*/
+	display: absolute;
 	margin: 15% 3% 0 3%;
-	min-height: 50%;
+	max-height: 300px;
 	border: 1px solid lightgrey;
 	border-radius: 5px;
 	padding: 3%;
-}
-
-#container {
-	/*position: absolute;*/
-	overflow: scroll;
+	overflow: auto;
 }
 
 .checkboxes-buttons {
