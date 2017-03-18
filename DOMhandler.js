@@ -12,7 +12,7 @@ var largeThemeMessages = document.getElementsByTagName("p");
 var darkThemeCheckbox = document.getElementById("dark-theme");
 var largeTextCheckbox = document.getElementById("large-text");
 
-postNewMessageButton.addEventListener("click", passNewMessageThru);
+// postNewMessageButton.addEventListener("click", passNewMessageThru);
 
 clearAllMessagesButton.addEventListener("click", function() {
 	deleteAllMessages();
@@ -52,8 +52,9 @@ document.body.addEventListener("click", deleteSingleCard);
 
 document.onkeydown = function() {
     if (window.event.keyCode === 13) {
-        passNewMessageThru();
+        Chatty.writeNewMessageToArray(userInputTextbox.value);
         clearAllMessagesButton.classList.remove("disabled"); 
+        writeArrayToDom(Chatty.getNewMessageArray());
     }
 };
 
@@ -61,26 +62,17 @@ postNewMessageButton.addEventListener("click", function(){
 	clearAllMessagesButton.classList.remove("disabled"); 
 });
 
-function passNewMessageThru() {
-        if (userInputTextbox.value === "") {
-            alert("Please type something, silly!")
-        } else {
-            Chatty.writeNewMessageToArray();
-            userInputTextbox.value = "";
-            writeNewMessageToDom();
-        }
-};
-
-function writeFillerMessageToArray(data) {
-    for (var i = 0; i < data.length; i++) {
-        var fillerToWrite = "";
-        fillerToWrite += `<div class="mesageFromUser">`;
-        fillerToWrite += `<h3>${data[i].name}</h3>`;
-        fillerToWrite += `<p>${data[i].user_message}</p>`;
-        fillerToWrite += `<button class="deleteButton">Delete</button>`;
-        fillerToWrite += `</div>`;
-        messageBoard.innerHTML += fillerToWrite;
+function writeArrayToDom() {
+    var arrayOfMsg = Chatty.getNewMessageArray();
+    var domString = "";
+    for (var i = 0; i < arrayOfMsg.length; i++) {
+        domString += `<div class="mesageFromUser">`;
+        // domString += `<h3>${domString.name}</h3>`;
+        domString += `<p>${arrayOfMsg[i]}</p>`;
+        domString += `<button class="deleteButton">Delete</button>`;
+        domString += `</div>`;
     }
+    messageBoard.innerHTML = domString;
 };
 
 function writeNewMessageToDom() {
@@ -98,3 +90,14 @@ function deleteSingleCard(e) {
 };
 
 window.addEventListener("load", Chatty.writeXhr);
+window.addEventListener("load", writeArrayToDom);
+
+
+
+
+
+
+
+
+
+

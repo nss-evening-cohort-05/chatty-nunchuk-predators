@@ -1,10 +1,15 @@
-var Chatty = (function(){
+var Chatty = (function(oldChatty){
 
+	// var privateMessageArray = [];
 	var data;
 
 	function getData(){
 		var jData = JSON.parse(this.responseText);
 		data = jData.messages;
+		for (var i=0;i<data.length; i++){
+			console.log(data[i].user_message);
+			Chatty.writeNewMessageToArray(data[i].user_message);
+		}
 		return data;
 	}
 
@@ -18,17 +23,15 @@ var Chatty = (function(){
 	messageRequest.open("GET","boilerplate.json");
 	messageRequest.send();
 
-	return {
+	  oldChatty.getXhr = function(){
 
-	  getXhr: function(){
+	  	return data;
 
-	  		return data;
-
-	  },
-	  writeXhr: function(){
-
-	  		writeFillerMessageToArray(Chatty.getXhr());
 	  }
-	};
+	  oldChatty.writeXhr = function(){
 
-})();
+	  	// writeFillerMessageToArray(Chatty.getXhr());
+		}
+	return oldChatty;
+
+})(Chatty || {});
