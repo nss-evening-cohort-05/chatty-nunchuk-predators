@@ -11,11 +11,18 @@ nav {
 	display: inline-block;
 }
 
-#container {
-	margin: 3%;
+#container-wrapper {
+	/*position: fixed;*/
+	margin: 15% 3% 0 3%;
+	min-height: 50%;
 	border: 1px solid lightgrey;
 	border-radius: 5px;
 	padding: 3%;
+}
+
+#container {
+	/*position: absolute;*/
+	overflow: scroll;
 }
 
 .checkboxes-buttons {

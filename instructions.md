@@ -13,7 +13,7 @@ Check out the [simple wireframe](https://app.moqups.com/chortlehoort/uGBbLbK46Y/
 
 1. Create an element to serve as the navigation bar for your application.
 1. Create an element to hold the logo for your application. It can be as simple as text, but if you want to find an image, that's fine.
-1. Create a input field for a user to enter in a message.
+1. Create an input field for a user to enter in a message.
 1. Add an event listener for "keypress" and detect when then return key has been pressed in the message field.
 1. When return key is detected, you'll create a new message (*see details below*).
 1. Create a button to clear all messages.
