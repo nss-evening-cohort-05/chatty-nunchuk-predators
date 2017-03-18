@@ -12,7 +12,6 @@ var largeThemeMessages = document.getElementsByTagName("p");
 var darkThemeCheckbox = document.getElementById("dark-theme");
 var largeTextCheckbox = document.getElementById("large-text");
 
-// postNewMessageButton.addEventListener("click", passNewMessageThru);
 
 clearAllMessagesButton.addEventListener("click", function() {
 	deleteAllMessages();
@@ -20,10 +19,6 @@ clearAllMessagesButton.addEventListener("click", function() {
 });
 
 userInputTextbox.addEventListener("change", function() {})
-
-//////////////KC////////////////
-///event listener functions on checkboxes ////
-
 
 darkThemeCheckbox.addEventListener("change", function(){
 	if (event.target.checked === true) {
@@ -44,22 +39,29 @@ largeTextCheckbox.addEventListener("change", function(){
 	}
 });
 
-////////////End KC ////////////
-
-
 
 document.body.addEventListener("click", deleteSingleCard);
 
 document.onkeydown = function() {
     if (window.event.keyCode === 13) {
+        if (userInputTextbox.value === "") {
+            alert("You must enter some text, silly!");
+        } else {  
         Chatty.writeNewMessageToArray(userInputTextbox.value);
         clearAllMessagesButton.classList.remove("disabled"); 
         writeArrayToDom(Chatty.getNewMessageArray());
+        }
     }
 };
 
 postNewMessageButton.addEventListener("click", function(){
-	clearAllMessagesButton.classList.remove("disabled"); 
+    if (userInputTextbox.value === "") {
+        alert("You must enter some text, silly!");
+    } else {
+        Chatty.writeNewMessageToArray(userInputTextbox.value); 
+        clearAllMessagesButton.classList.remove("disabled"); 
+        writeArrayToDom(Chatty.getNewMessageArray());
+    }
 });
 
 function writeArrayToDom() {
@@ -70,8 +72,8 @@ function writeArrayToDom() {
         domString += `<div class="mesageFromUser">`;
         domString += `<p>${arrayOfMsg[i]}</p>`;
         domString += `<p class="timestamp">${timestamp}</p>`;
-        domString += `<button class="deleteButton">Delete</button>`;
-        domString += `<input onclick='responsiveVoice.speak("${arrayOfMsg[i]}");' type='button' value=' 🔊 Play' class='audioplay btn btn-default' id='picOnPlayButton'/>`
+        domString += `<button class="deleteButton btn btn-default">Delete</button>`;
+        domString += `<input onclick='responsiveVoice.speak("${arrayOfMsg[i]}");' type='button' value=' 🔊 Play' class='audioplay btn btn-default' id='picOnPlayButton'/>`;
         domString += `</div>`;
     }
     messageBoard.innerHTML = domString;
@@ -86,7 +88,8 @@ function deleteAllMessages() {
 };
 
 function deleteSingleCard(e) {
-    if (e.target.className === "deleteButton") {
+    if (e.target.className === "deleteButton btn btn-default") {
+        console.log(event);
         e.target.parentElement.remove();
     };
 };

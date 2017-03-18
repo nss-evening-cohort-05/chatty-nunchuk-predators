@@ -1,6 +1,5 @@
 var Chatty = (function(oldChatty){
 
-	// var privateMessageArray = [];
 	var data;
 
 	function getData(){
@@ -27,10 +26,7 @@ var Chatty = (function(oldChatty){
 	  	return data;
 
 	  }
-	  oldChatty.writeXhr = function(){
 
-
-		}
 	return oldChatty;
 
 })(Chatty || {});
