@@ -4,6 +4,7 @@ var messageBoard = document.getElementById("container");
 var postNewMessageButton = document.getElementById("create-message");
 var clearAllMessagesButton = document.getElementById("clear-board");
 var userInputTextbox = document.getElementById("input-text");
+var darkThemeBody = document.getElementsByTagName("body");
 
 // Checkbox references
 
@@ -28,16 +29,17 @@ userInputTextbox.addEventListener("change", function() {
 
 darkThemeCheckbox.addEventListener("change", function(){
 	if (event.target.checked === true) {
-		document.getElementsByTagName("body").classList.add("darkTheme");
-	}	
-	console.log(typeof(document.getElementsByTagName)); //find the oobject in the Arrray. 
+		darkThemeBody[0].classList.add("darkTheme");
+	}	else {
+		darkThemeBody[0].classList.remove("darkTheme");
+	}
 });
 ////////////End KC ////////////
 
 largeTextCheckbox.addEventListener("change", function(){
 	console.log("dark theme checkbox works");
 });
-
+console.log(darkThemeBody);
 
 
 
