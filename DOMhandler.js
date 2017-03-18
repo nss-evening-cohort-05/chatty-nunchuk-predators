@@ -4,6 +4,11 @@ var messageBoard = document.getElementById("container");
 var postNewMessageButton = document.getElementById("create-message");
 var clearAllMessagesButton = document.getElementById("clear-board");
 var userInputTextbox = document.getElementById("input-text");
+var darkThemeBody = document.getElementsByTagName("body");
+var largeThemeMessages = document.getElementsByTagName("p");
+
+// Checkbox references
+
 var darkThemeCheckbox = document.getElementById("dark-theme");
 var largeTextCheckbox = document.getElementById("large-text");
 
@@ -16,13 +21,32 @@ clearAllMessagesButton.addEventListener("click", function() {
 
 userInputTextbox.addEventListener("change", function() {})
 
-darkThemeCheckbox.addEventListener("change", function() {
-    console.log("dark theme checkbox works");
+//////////////KC////////////////
+///event listener functions on checkboxes ////
+
+
+darkThemeCheckbox.addEventListener("change", function(){
+	if (event.target.checked === true) {
+		darkThemeBody[0].classList.add("darkTheme");
+	}	else {
+		darkThemeBody[0].classList.remove("darkTheme");
+	}
 });
 
-largeTextCheckbox.addEventListener("change", function() {
-    console.log("dark theme checkbox works");
+largeTextCheckbox.addEventListener("change", function(){
+	for (var i=0; i<largeThemeMessages.length; i++){
+		if (event.target.checked === true) {
+			largeThemeMessages[i].classList.add("largeTextMsg");
+		} 
+		else {
+			largeThemeMessages[i].classList.remove("largeTextMsg");
+		}
+	}
 });
+
+////////////End KC ////////////
+
+
 
 document.body.addEventListener("click", deleteSingleCard);
 
