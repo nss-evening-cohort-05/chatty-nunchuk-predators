@@ -12,17 +12,14 @@ var largeThemeMessages = document.getElementsByTagName("p");
 var darkThemeCheckbox = document.getElementById("dark-theme");
 var largeTextCheckbox = document.getElementById("large-text");
 
-postNewMessageButton.addEventListener("click", function(){
-	Chatty.writeNewMessageToDom();
+postNewMessageButton.addEventListener("click", passNewMessageThru);
+
+clearAllMessagesButton.addEventListener("click", function() {
+	deleteAllMessages();
+	clearAllMessagesButton.classList.add("disabled");   
 });
 
-clearAllMessagesButton.addEventListener("click", deleteAllMessages);
-
-userInputTextbox.addEventListener("change", function() {
-
-})
-
-// Checkbox event listeners
+userInputTextbox.addEventListener("change", function() {})
 
 //////////////KC////////////////
 ///event listener functions on checkboxes ////
@@ -35,9 +32,7 @@ darkThemeCheckbox.addEventListener("change", function(){
 		darkThemeBody[0].classList.remove("darkTheme");
 	}
 });
-////////////End KC ////////////
 
-//////////////KC////////////////
 largeTextCheckbox.addEventListener("change", function(){
 	for (var i=0; i<largeThemeMessages.length; i++){
 		if (event.target.checked === true) {
@@ -55,38 +50,52 @@ largeTextCheckbox.addEventListener("change", function(){
 
 document.body.addEventListener("click", deleteSingleCard);
 
-// Enter button
-
 document.onkeydown = function() {
- if (window.event.keyCode === 13) {
-	Chatty.writeNewMessageToDom();
- }
+    if (window.event.keyCode === 13) {
+        passNewMessageThru();
+        clearAllMessagesButton.classList.remove("disabled"); 
+    }
 };
 
-// Writing PreLoaded messages to Dom
+postNewMessageButton.addEventListener("click", function(){
+	clearAllMessagesButton.classList.remove("disabled"); 
+});
 
-function writeFillerMessageToDom(data){
+function passNewMessageThru() {
+        if (userInputTextbox.value === "") {
+            alert("Please type something, silly!")
+        } else {
+            Chatty.writeNewMessageToDom();
+            userInputTextbox.value = "";
+        }
+}
 
-	for(i=0; i<data.length; i++){
-
-		var fillerToWrite = "";
-		fillerToWrite += `<div class="mesageFromUser">`;
-		fillerToWrite += `<h3>${data[i].name}</h3>`;
-		fillerToWrite += `<p>${data[i].user_message}</p>`;
-		fillerToWrite += `<button class="deleteButton">Delete</button>`;
-		fillerToWrite += `</div>`;
-		messageBoard.innerHTML += fillerToWrite;
-	}
+function writeFillerMessageToDom(data) {
+    for (var i = 0; i < data.length; i++) {
+        var fillerToWrite = "";
+        fillerToWrite += `<div class="mesageFromUser">`;
+        fillerToWrite += `<h3>${data[i].name}</h3>`;
+        fillerToWrite += `<p>${data[i].user_message}</p>`;
+        fillerToWrite += `<button class="deleteButton">Delete</button>`;
+        fillerToWrite += `</div>`;
+        messageBoard.innerHTML += fillerToWrite;
+    }
 }
 
 function deleteAllMessages() {
-	messageBoard.innerHTML = "";
+    messageBoard.innerHTML = "";
 };
 
-function deleteSingleCard(e){
-	if (e.target.className === "deleteButton"){
-		e.target.parentElement.remove();
-	};
+function deleteSingleCard(e) {
+    if (e.target.className === "deleteButton") {
+        e.target.parentElement.remove();
+    };
+};
+
+function removeLastMessageAddDisableClass {
+    if ( = "") {
+        clearAllMessagesButton.classList.add("disabled"); 
+    };
 };
 
 window.addEventListener("load", Chatty.writeXhr);
