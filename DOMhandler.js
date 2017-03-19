@@ -73,8 +73,9 @@ function writeArrayToDom() {
         domString += `<p>${arrayOfMsg[i]}</p>`;
         domString += `<p class="timestamp">${timestamp}</p>`;
         domString += `<button class="deleteButton btn btn-default">Delete</button>`;
-        domString += `<input onclick='responsiveVoice.speak("${arrayOfMsg[i]}");' type='button' value=' 🔊 Play' class='audioplay btn btn-default' id='picOnPlayButton'/>`;
-        domString += `</div>`;
+        domString += `<button onclick='responsiveVoice.speak("${arrayOfMsg[i]}");' class='audioplay deleteButton btn btn-default' id='picOnPlayButton'>`;
+        domString += `<span class="glyphicon glyphicon-volume-up"></span>`;
+        domString += `</button></div>`;
     }
     messageBoard.innerHTML = domString;
 };
