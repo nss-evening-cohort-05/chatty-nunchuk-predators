@@ -50,6 +50,7 @@ document.onkeydown = function() {
         Chatty.writeNewMessageToArray(userInputTextbox.value);
         clearAllMessagesButton.classList.remove("disabled"); 
         writeArrayToDom(Chatty.getNewMessageArray());
+        userInputTextbox.value = "";
         }
     }
 };
@@ -61,6 +62,7 @@ postNewMessageButton.addEventListener("click", function(){
         Chatty.writeNewMessageToArray(userInputTextbox.value); 
         clearAllMessagesButton.classList.remove("disabled"); 
         writeArrayToDom(Chatty.getNewMessageArray());
+        userInputTextbox.value = ""
     }
 });
 
