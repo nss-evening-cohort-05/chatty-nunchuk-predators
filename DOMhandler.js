@@ -1,4 +1,4 @@
-////////////////////References and Event Listeners //////////////////
+//////////////////// REFERENCES //////////////////
 
 var messageBoard = document.getElementById("container");
 var postNewMessageButton = document.getElementById("create-message");
@@ -6,56 +6,55 @@ var clearAllMessagesButton = document.getElementById("clear-board");
 var userInputTextbox = document.getElementById("input-text");
 var darkThemeBody = document.getElementsByTagName("body");
 var largeThemeMessages = document.getElementsByTagName("p");
-
-// Checkbox references
-
 var darkThemeCheckbox = document.getElementById("dark-theme");
 var largeTextCheckbox = document.getElementById("large-text");
 
+//////////////////// EVENT LISTENERS //////////////////
+
+window.addEventListener("load", Chatty.writeXhr);
+window.addEventListener("load", writeArrayToDom);
+
+document.onkeydown = function() {
+    if (window.event.keyCode === 13) {
+        onSubmit();
+    }
+};
+
+postNewMessageButton.addEventListener("click", function(){
+    onSubmit();
+});
 
 clearAllMessagesButton.addEventListener("click", function() {
-	deleteAllMessages();
-	clearAllMessagesButton.classList.add("disabled");   
+    deleteAllMessages();
+    clearAllMessagesButton.classList.add("disabled");   
 });
 
 userInputTextbox.addEventListener("change", function() {})
 
 darkThemeCheckbox.addEventListener("change", function(){
-	if (event.target.checked === true) {
-		darkThemeBody[0].classList.add("darkTheme");
-	}	else {
-		darkThemeBody[0].classList.remove("darkTheme");
-	}
+    if (event.target.checked === true) {
+        darkThemeBody[0].classList.add("darkTheme");
+    }   else {
+        darkThemeBody[0].classList.remove("darkTheme");
+    }
 });
 
 largeTextCheckbox.addEventListener("change", function(){
-	for (var i=0; i<largeThemeMessages.length; i++){
-		if (event.target.checked === true) {
-			largeThemeMessages[i].classList.add("largeTextMsg");
-		} 
-		else {
-			largeThemeMessages[i].classList.remove("largeTextMsg");
-		}
-	}
+    for (var i=0; i<largeThemeMessages.length; i++){
+        if (event.target.checked === true) {
+            largeThemeMessages[i].classList.add("largeTextMsg");
+        } 
+        else {
+            largeThemeMessages[i].classList.remove("largeTextMsg");
+        }
+    }
 });
-
 
 document.body.addEventListener("click", deleteSingleCard);
 
-document.onkeydown = function() {
-    if (window.event.keyCode === 13) {
-        if (userInputTextbox.value === "") {
-            alert("You must enter some text, silly!");
-        } else {  
-        Chatty.writeNewMessageToArray(userInputTextbox.value);
-        clearAllMessagesButton.classList.remove("disabled"); 
-        writeArrayToDom(Chatty.getNewMessageArray());
-        userInputTextbox.value = "";
-        }
-    }
-};
+//////////////////// FUNCTIONS //////////////////
 
-postNewMessageButton.addEventListener("click", function(){
+function onSubmit() {
     if (userInputTextbox.value === "") {
         alert("You must enter some text, silly!");
     } else {
@@ -64,7 +63,7 @@ postNewMessageButton.addEventListener("click", function(){
         writeArrayToDom(Chatty.getNewMessageArray());
         userInputTextbox.value = ""
     }
-});
+};
 
 function writeArrayToDom() {
     var arrayOfMsg = Chatty.getNewMessageArray();
@@ -97,6 +96,4 @@ function deleteSingleCard(e) {
     };
 };
 
-window.addEventListener("load", Chatty.writeXhr);
-window.addEventListener("load", writeArrayToDom);
 
