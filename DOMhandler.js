@@ -8,6 +8,7 @@ var darkThemeBody = document.getElementsByTagName("body");
 var largeThemeMessages = document.getElementsByTagName("p");
 var darkThemeCheckbox = document.getElementById("dark-theme");
 var largeTextCheckbox = document.getElementById("large-text");
+var endFocus = document.getElementById("end-focus");
 
 //////////////////// EVENT LISTENERS //////////////////
 
@@ -62,6 +63,8 @@ function onSubmit() {
         clearAllMessagesButton.classList.remove("disabled"); 
         writeArrayToDom(Chatty.getNewMessageArray());
         userInputTextbox.value = ""
+        console.log(endFocus);
+        endFocus.scrollIntoView();
     }
 };
 
@@ -91,7 +94,6 @@ function deleteAllMessages() {
 
 function deleteSingleCard(e) {
     if (e.target.className === "deleteButton btn btn-default") {
-        console.log(event);
         e.target.parentElement.remove();
     };
 };
