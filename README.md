@@ -1,24 +1,26 @@
 # Chatty Group Project
 
-
 ## Assignment
 
-#### The "chatty" assignment is an in class, group project that is designed to help us expand our knowledge and experience working collaboratively. This main focus of the assignment is to review the information from our last two milestones, "The-Static-Web” and the current “Single-Page-Apps” and combine that knowledge into a working web chatroom. 
-
-
-
+#### The "Chatty" assignment was an in-class group project that is designed to help us expand our knowledge and experience working collaboratively. This main focus of the assignment is to review the information from our last two milestones, "The-Static-Web” and the current “Single-Page-Apps” and combine that knowledge into a working web chatroom. 
 
 ## Criteria
 
 ##### Trello Board Creation
 
-We had to create a trello board and plan out and assign all aspects of the project. This was immensely help to "visualize" the assignment and make sure to see the projects scope from beginning to end. 
+We had to create a trello board and plan out and assign all aspects of the project. This was immensely helpful to "visualize" the assignment and make sure to see the project scope from beginning to end. 
 
 
 Here is a link to the our Trello! 
 [https://trello.com/b/rsYng8Xm/chattygroupproject]
 
-##### Navigation bar
+
+##Requirements
+
+### Simple Wireframe Given as Concept
+[boilerplate wireframe example]()
+
+##### Navigation bar Requirements
 
 1. Create an element to serve as the navigation bar for your application.
 1. Create an element to hold the logo for your application. It can be as simple as text, but if you want to find an image, that's fine.
@@ -53,4 +55,29 @@ Create multiple IIFEs, following the Single Responsibility Principle, that perfo
 1. One IIFE should contain a function that accepts an element `id`, and the user message, and then add the user's message - along with the delete button - to the specified parent element. Each message should be stored in a private array in this IIFE. This IIFE should also expose a function to read all messages, and delete a single message.
 1. One IIFE should accept a message element `id` and then remove the correct element from the DOM. This IIFE should also remove the corresponding message from the private array that was created in the previous IIFE.
 
+## Bonus Option We Chose
+
+### Timestamp
+
+1. Put a timestamp on each message.
+1. Again, this will change the structure of your JSON file.
+
+
+## Technologies Used
+> 1. HTML 
+> 1. CSS
+> 2. Bootstrap
+> 4. JavaScript: IIFE and augmentation, XHR, JSON, Event Listeners, DOM Manipulation, Sounds. 
+
+### Final Product Images
+[Final Nunchuck Predators Chatty Page On Load]()
+[Final Nunchuck Predators Chatty Dark Theme]()
+[Final Nunchuck Predators Chatty Large Text]()
+[Final Nunchuck Predators Chatty Dark Them with Large Text]()
+
+## Contributors
+>>1. [Isabel Ramos](https://github.com/isabelramos)
+>>1. [Mitchel Blom](https://github.com/mitchellblom)
+>>1. [Geoff Webb](https://github.com/webbdm)
+>>1. [Krissy Caron](https://github.com/krissycaron)
 
