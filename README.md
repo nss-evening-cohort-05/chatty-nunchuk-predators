@@ -70,10 +70,10 @@ Create multiple IIFEs, following the Single Responsibility Principle, that perfo
 > 4. JavaScript: IIFE and augmentation, XHR, JSON, Event Listeners, DOM Manipulation, Sounds. 
 
 ### Final Product Images
-[Final Nunchuck Predators Chatty Page On Load](https://github.com/nss-evening-cohort-05/chatty-nunchuk-predators/blob/master/imgsforREADME/Chatty-nunchucks-chatty-final.png)
-[Final Nunchuck Predators Chatty Dark Theme](https://github.com/nss-evening-cohort-05/chatty-nunchuk-predators/blob/master/imgsforREADME/Chatty-darktheme.png)
-[Final Nunchuck Predators Chatty Large Text](https://github.com/nss-evening-cohort-05/chatty-nunchuk-predators/blob/master/imgsforREADME/Chatty-lgtext.png)
-[Final Nunchuck Predators Chatty Dark Them with Large Text](https://github.com/nss-evening-cohort-05/chatty-nunchuk-predators/blob/master/imgsforREADME/Chatty-darktheme-lgtext.png)
+- [Final Nunchuck Predators Chatty Page On Load](https://github.com/nss-evening-cohort-05/chatty-nunchuk-predators/blob/master/imgsforREADME/Chatty-nunchucks-chatty-final.png)
+- [Final Nunchuck Predators Chatty Dark Theme](https://github.com/nss-evening-cohort-05/chatty-nunchuk-predators/blob/master/imgsforREADME/Chatty-darktheme.png)
+- [Final Nunchuck Predators Chatty Large Text](https://github.com/nss-evening-cohort-05/chatty-nunchuk-predators/blob/master/imgsforREADME/Chatty-lgtext.png)
+- [Final Nunchuck Predators Chatty Dark Them with Large Text](https://github.com/nss-evening-cohort-05/chatty-nunchuk-predators/blob/master/imgsforREADME/Chatty-darktheme-lgtext.png)
 
 ## Contributors
 >>1. [Isabel Ramos](https://github.com/isabelramos)
